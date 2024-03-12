@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <v-app-bar color="#3165D4">
+    <v-app-bar class="transparent-menu" :class="{ 'sticky-menu': isSticky }">
       <v-row align="center">
         <v-col cols="4">
           <v-toolbar-title>Verus Currency Explorer</v-toolbar-title>
@@ -70,7 +69,6 @@
       </v-list>
     </v-navigation-drawer>
 
-  </div>
 </template>
 
 <script setup>
@@ -81,6 +79,10 @@ import { useStore } from 'vuex';
 const drawer = ref(false);
 const store = useStore();
 const rpcValue = computed(() => store.state.rpcValue);
+
+window.addEventListener('scroll', () => {
+  isSticky.value = window.pageYOffset > 0;
+});
 
 </script>
 
@@ -96,11 +98,23 @@ const rpcValue = computed(() => store.state.rpcValue);
   font-size: large;
 }
 .smaller-menu{
-  background-color: #3165D4;
-  color: white;
+  color: transparent;
 }
 .navdrawer {
-  background-color: blue;
+  background-color: transparent;
   color: white;
+}
+
+.transparent-menu {
+  background-color: transparent; /* Set the background color to transparent */
+  transition: background-color 0.3s ease;
+  color: white; /* Add transition effect for smooth change */
+}
+
+.sticky-menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Adjust z-index as needed */
 }
 </style>
