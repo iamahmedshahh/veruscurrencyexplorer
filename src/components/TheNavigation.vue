@@ -1,5 +1,5 @@
 <template>
-    <v-app-bar class="transparent-menu" :class="{ 'sticky-menu': isSticky }">
+    <v-app-bar class="trans-menu" :class="{ 'sticky-menu': isSticky }">
       <v-row align="center">
         <v-col cols="4">
           <v-toolbar-title>Verus Currency Explorer</v-toolbar-title>
@@ -20,7 +20,7 @@
         </v-btn>
       </template>
       <div>
-      <v-list class="smaller-menu">
+      <v-list>
         <v-list-item>
           <router-link to="/" class="nav-link" :class="{ 'active-menu': $route.path === '/' }">Dashboard</router-link>
          </v-list-item>
@@ -87,27 +87,8 @@ window.addEventListener('scroll', () => {
 </script>
 
 <style scoped>
-.nav-link {
-  color: white;
-  text-decoration: none;
-  padding: 10px;
-}
-
-.active-menu {
-  font-weight: bold;
-  font-size: large;
-}
-.smaller-menu{
-  color: transparent;
-}
-.navdrawer {
-  background-color: transparent;
-  color: white;
-}
-
-.transparent-menu {
+.trans-menu {
   background-color: transparent; /* Set the background color to transparent */
-  transition: background-color 0.3s ease;
   color: white; /* Add transition effect for smooth change */
 }
 
