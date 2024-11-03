@@ -1,26 +1,26 @@
 <script setup>
 import {ref} from 'vue'
+import sampleData from '../lib/currencyDefinitions.json'; // Import the JSON file
+
+const sampa = ref(sampleData.sample);
+
 </script>
 
 <template>
+  <div class="columns-1">
+    <article class="prose lg:prose-xl" >
     <h1>Dashboard</h1>
-    <v-hover v-slot="{ isHovering, props }">
-    <v-card variant="outlined" v-bind="props" :class="`elevation-${isHovering ? 24 : 6}`" class="mx-auto pa-6 transition-swing">
-      <v-card-title>
+    <p>
         Lorem Ispetem
-      </v-card-title>
-      <v-card-text>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
         Harum maiores modi quidem veniam, expedita quis laboriosam, ullam facere 
-        adipisci,iusto, 
+        adipisci,iusto, <b> {{ sampa }}</b>
         voluptate sapiente corrupti asperiores rem nemo numquam fuga ab at.
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum 
         maiores modi quidem veniam, expedita quis laboriosam, ullam facere adipisci, iusto, 
         voluptate sapiente corrupti asperiores rem nemo numquam fuga ab at.
-      </v-card-text>
-    </v-card>
-    </v-hover>
+        </p>
+    </article>
+</div>
 </template>
 
-<style scoped>
-</style>

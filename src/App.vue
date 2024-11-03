@@ -1,30 +1,15 @@
 
 
 <template>
-  <v-app color="primary">
   <TheNavigation></TheNavigation>
-  <v-main>
-  <v-container fluid>
+    <div class="container mx-auto justify-center flex mt-10 columns-1" data-theme="dark">
     <router-view>
     </router-view>
-  </v-container>
-  </v-main>
-</v-app>
+    </div>
 </template>
 
 <script setup>
 import TheNavigation from './components/TheNavigation.vue';
 
 </script>
-<style scoped>
-.content-container-two{
-  min-width: 100%;
-  margin: 0 auto;
-}
-.content-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; /* Ensures the container takes the full height of the viewport */
-}
-</style>
+
